@@ -18,7 +18,7 @@ const AddStudent = () => {
     const readValue=()=>
         {
             console.log(data)
-            axios.post("",data).then(
+            axios.post("http://localhost:8080/add",data).then(
                 (response)=>
                     {
                         console.log(response.data)
@@ -53,12 +53,12 @@ const AddStudent = () => {
                             <input type="text" className="form-control" name='rollno' value={data.rollno} onChange={inputHandler}/>
                         </div>
                         <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xl6">
-                            <label htmlFor="" className="form-label">Admission No</label>
-                            <input type="text" className="form-control" name='admno' value={data.admno} onChange={inputHandler}/>
-                        </div>
-                        <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xl6">
                             <label htmlFor="" className="form-label">College</label>
                             <input type="text" className="form-control" name='college' value={data.college} onChange={inputHandler}/>
+                        </div>
+                        <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xl6">
+                            <label htmlFor="" className="form-label">Address</label>
+                            <input type="text" className="form-control" name='address' value={data.address} onChange={inputHandler}/>
                         </div>
                         <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xl6">
                             <button className="btn btn-success" onClick={readValue}>Add</button>

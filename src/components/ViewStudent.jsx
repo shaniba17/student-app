@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 const ViewStudent = () => {
     const [data, changedata] = useState([])
     const fetchData = () => {
-        axios.get("").then(
+        axios.get("http://localhost:8080/view").then(
             (response) => {
                 console.log(response.data)
                 changedata(response.data)
@@ -24,8 +24,8 @@ const ViewStudent = () => {
                     <tr>
                         <th scope="col">Name</th>
                         <th scope="col">Roll No</th>
-                        <th scope="col">Admission No</th>
                         <th scope="col">College</th>
+                        <th scope="col">Address</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,8 +35,8 @@ const ViewStudent = () => {
                                 return <tr>
                                     <td>{value.name}</td>
                                     <td>{value.rollno}</td>
-                                    <td>{value.admno}</td>
                                     <td>{value.college}</td>
+                                    <td>{value.address}</td>
                                 </tr>
                             }
                         )
